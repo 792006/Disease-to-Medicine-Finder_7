@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease to Medicine Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f9;
+            color: #000000;
+        }
+        h1 {
+            color: #000000;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #0078D7;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005BB5;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Disease to Medicine Finder</h1>
+    <p>Enter the name of a disease to get the corresponding medicine.</p>
+    <input type="text" id="diseaseInput" placeholder="Enter disease name">
+    <button onclick="findMedicine()">Find Medicine</button>
+    <div id="result"></div>
+
+    <script>
+        function findMedicine() {
+            // Simple mapping of diseases to medicines
+            const diseaseMedicineMap = {
+        "cold": "paracetamol",
+        "flu": "oseltamivir",
+        "fever": "ibuprofen",
+        "headache": "aspirin",
+        "diabetes": "metformin",
+        "hypertension": "amlodipine",
+        "asthma": "salbutamol",
+        "allergies": "loratadine",
+        "anxiety": "diazepam",
+        "depression": "sertraline",
+        "acne": "benzoyl peroxide",
+        "eczema": "hydrocortisone",
+        "arthritis": "celecoxib",
+        "epilepsy": "carbamazepine",
+        "migraine": "sumatriptan",
+        "insomnia": "zolpidem",
+        "hyperlipidemia": "atorvastatin",
+        "osteoporosis": "alendronate",
+        "gerd": "omeprazole",
+        "irritable bowel syndrome": "dicyclomine",
+        "chronic pain": "morphine",
+        "parkinson's disease": "levodopa",
+        "alzheimer's disease": "donepezil",
+        "schizophrenia": "risperidone",
+        "obesity": "orlistat",
+        "heart failure": "enalapril",
+        "hypothyroidism": "levothyroxine",
+        "hyperthyroidism": "methimazole",
+        "psoriasis": "calcipotriol",
+        "bacterial infection": "amoxicillin",
+        "viral infection": "acyclovir",
+        "fungal infection": "fluconazole",
+        "urinary tract infection": "ciprofloxacin",
+        "pneumonia": "azithromycin",
+        "hiv/aids": "efavirenz",
+        "herpes": "valacyclovir",
+        "chickenpox": "acyclovir",
+        "measles": "supportive care",
+        "mumps": "supportive care",
+        "rubella": "supportive care",
+        "pertussis": "azithromycin",
+        "meningitis": "ceftriaxone",
+        "encephalitis": "acyclovir",
+        "polio": "supportive care",
+        "covid-19": "remdesivir",
+        "swine flu": "oseltamivir",
+        "bird flu": "zanamivir",
+        "zika virus": "supportive care",
+        "ebola": "inmazeb",
+        "leprosy": "rifampin",
+        "lyme disease": "doxycycline",
+        "syphilis": "penicillin",
+        "gonorrhea": "ceftriaxone",
+        "chlamydia": "azithromycin",
+        "trichomoniasis": "metronidazole",
+        "bacterial vaginosis": "metronidazole",
+        "yeast infection": "clotrimazole",
+        "scabies": "permethrin",
+        "head lice": "malathion",
+        "ringworm": "terbinafine",
+        "athlete's foot": "tolnaftate",
+        "warts": "salicylic acid",
+        "cold sores": "acyclovir",
+        "conjunctivitis": "erythromycin",     
+}
+;
+            // Get the user input
+            const disease = document.getElementById("diseaseInput").value.trim().toLowerCase();
+
+            // Find the corresponding medicine
+            const medicine = diseaseMedicineMap[disease];
+
+            // Display the result
+            const resultDiv = document.getElementById("result");
+            if (medicine) {
+                resultDiv.textContent = `The recommended medicine for ${disease} is ${medicine}.`;
+            } else {
+                resultDiv.textContent = "Sorry, we don't have information on this disease.";
+            }
+        }
+    </script>
+</body>
+</html>
